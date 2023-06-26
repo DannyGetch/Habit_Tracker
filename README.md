@@ -80,20 +80,20 @@ You can download the latest version of Python from [this link.](https://www.pyth
 <br>Install by running the below command:<br>
 
 ```
-pip install questionary
+pip3 install questionary
 ```
 
 <br>[Tabulate](https://pypi.org/project/tabulate/) - Pretty-print tabular data in Python, a library and a command-line utility.
 <br>Install by running the below command:<br>
 
 ```
-pip install tabulate
+pip3 install tabulate
 ```
 
 If you don't feel like downloading the libraries one by one, you can run the following command to install all the dependancies at once:
 
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ### Packages for running tests
@@ -102,30 +102,24 @@ To run the tests, you will need the following packages installed:
 <br>Pytest - For testing functions:<br>
 
 ```
-pip install -U pytest
+pip3 install -U pytest
 ```
 
 <br>Freezegun - For freezing time: <br>
 
 ```
-pip install freezegun
+pip3 install freezegun
 ```
 
 <br>When you run the test file, make sure to use the -s flag to see console messages:
 
 ```
-python -m pytest -s test.py
+python3 -m pytest -s test.py
 ```
 
 ## How To Run the Program
 
 After installing the dependencies, download the files from this repository (if not downloaded already) and store them in a separate folder. Open your command/terminal window and [cd](https://www.alphr.com/change-directory-in-cmd/) to your downloaded folder. After that, type the following command to execute the program:
-
-```
-python main.py
-```
-
-For Python 3.10+
 
 ```
 python3 main.py
