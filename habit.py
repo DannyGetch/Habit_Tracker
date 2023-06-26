@@ -1,6 +1,7 @@
 import datetime
 import dbsystem
 
+
 class Habit:
     """
     A class used to represent a Habit
@@ -35,13 +36,13 @@ class Habit:
     update_habit()
         updates a habit by passing its name to the update_habit method in the dbsystem module
     """
-    
-    def __init__(self, name = None, periodicity = None, duration = None, streak = 0, streak_type = None, date_last_completed = None, db_name = "database.db"):
+
+    def __init__(self, name=None, periodicity=None, duration=None, streak=0, streak_type=None, date_last_completed=None, db_name="database.db"):
         """
         The __init__ function is called when the class is instantiated.
         It sets up the instance of the class, and defines all of its attributes.
-        
-        
+
+
         Parameters
         ----------
             self
@@ -60,10 +61,10 @@ class Habit:
                 Set the date_last_completed attribute of the object
             db_name
                 Name of the database to connect to
-        
+
         Returns
         -------
-        
+
             The object itself
         """
         self.name = name
@@ -79,22 +80,24 @@ class Habit:
         """
         adds an instance of the Habit class to the database by passing it to the add_habit method in the dbsystem module
         """
-        dbsystem.add_habit(self.db, self.name, self.periodicity, self.duration, self.streak, self.streak_type, self.date_last_comleted, self.current_time)
-    
+        dbsystem.add_habit(self.db, self.name, self.periodicity, self.duration,
+                           self.streak, self.streak_type, self.date_last_comleted, self.current_time)
+
     def delete(self):
         """
         deletes an instance of the Habit class from the database by passing its name to the delete_habit method in the dbsystem module
         """
         dbsystem.delete_habit(self.db, self.name)
-    
+
     def mark_habit_done(self):
         """
         checks off a habit by passing its name to the mark_habit_done method in the dbsystem module
         """
         dbsystem.mark_habit_done(self.db, self.name)
-    
-    def update_habit(self):
+
+    def update_habit(self, old_name):
         """
         updates a habit by passing its name to the update_habit method in the dbsystem module
         """
-        dbsystem.update_habit(self.db, self.name)
+        dbsystem.update_habit(old_name, self.db, self.name,
+                              self.periodicity, self.duration)
